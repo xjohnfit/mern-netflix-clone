@@ -14,7 +14,7 @@ dotenv.config();
 // Connect to MongoDB
 const DBConnection = async () => {
     try {
-        const connection = await mongoose.connect(process.env.MONGO_URL);
+        const connection = await mongoose.connect(process.env.REACT_APP_MONGO_URL);
         console.log('Connected to MongoDB: ', connection.connection.host);
     } catch (error) {
         console.log('Error: ', error);
@@ -24,9 +24,11 @@ const DBConnection = async () => {
 const PORT = process.env.PORT || 5001;
 app.use(express.json());
 app.use(cors({
-    origin: [process.env.CLIENT_URL, process.env.ADMIN_URL],
+    origin: [process.env.REACT_APP_CLIENT_URL, process.env.REACT_APP_ADMIN_URL],
     credentials: true
 }));
+
+console.log(process.env.REACT_APP_CLIENT_URL);
 
 const __dirname = path.resolve();
 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { login } from '../../authContext/authController';
 import { AuthContext } from '../../authContext/AuthContext';
 
+import NetflixLogo from '../../media/watchflix.png';
 
 const Login = () => {
 
@@ -20,9 +21,9 @@ const Login = () => {
             <div className="">
                 <div className="flex items-center justify-between px-10 py-6">
                     <img
-                        className="h-[40px]"
-                        src="../src/media/Netflix_2015_logo.svg.png"
-                        alt=""
+                        className="h-[20px] sm:h-[40px]"
+                        src={NetflixLogo}
+                        alt="Netflix Logo"
                     />
                 </div>
             </div>

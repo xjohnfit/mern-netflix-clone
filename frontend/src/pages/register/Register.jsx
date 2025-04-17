@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
-import NetflixLogo from '../../media/netflix_logo.png';
+import NetflixLogo from '../../media/watchflix.png';
 
 const Register = () => {
 
@@ -49,13 +49,13 @@ const Register = () => {
             <div className="">
                 <div className="flex items-center justify-between px-10 py-6">
                     <img
-                        className="h-[40px]"
+                        className="h-[20px] sm:h-[40px]"
                         src={NetflixLogo}
                         alt="Netflix Logo"
                     />
-                    <div className='flex items-center gap-5'>
-                        <div className='flex gap-5'>
-                            <Link to='/login' className="bg-red-600 border-none text-white rounded-md py-2 px-3 w-fit text-sm sm:text-lg cursor-pointer z-10">User Sign-in</Link>
+                    <div className='flex items-center justify-center gap-5'>
+                        <div className='flex gap-2 sm:gap-5'>
+                            <Link to='/login' className="bg-red-600 border-none text-white rounded-md py-2 px-2 sm:px-3 w-fit text-sm sm:text-lg cursor-pointer z-10">User Sign-in</Link>
                             <Link to={import.meta.env.VITE_ADMIN_URL} target='_blank' className="bg-red-600 border-none text-white rounded-md py-2 px-3 w-fit text-sm sm:text-lg cursor-pointer z-10">Admin Sign-in</Link>
                         </div>
                     </div>
@@ -70,31 +70,31 @@ const Register = () => {
                     membership.
                 </p>
                 {
-                    !email ? (<div className="w-[50%] bg-white flex items-center justify-between mt-5 h-12 rounded-md">
+                    !email ? (<div className="w-[70%] sm:w-[50%] bg-white flex items-center justify-between mt-5 h-12 rounded-md">
                         <input
                             className='flex-[9_9_0%] h-full border-none px-1 py-3 outline-none text-black/100'
                             type="email"
                             placeholder="Email Address"
                             ref={emailRef}
                         />
-                        <button className="flex-[6_6_0%] h-full bg-red-600 border-none text-white text-xl cursor-pointer" onClick={handleStart}>Get Started</button>
+                        <button className="flex-[6_6_0%] h-full w-fit  bg-red-600 border-none text-white text-sm sm:text-xl cursor-pointer" onClick={handleStart}>Get Started</button>
                     </div>) : (
-                        <form className="w-[90%] sm:w-[70%] md:w-[70%] lg:w-[60%] bg-white flex items-center justify-between mt-5 h-12 rounded-md">
+                        <form className="w-[90%] sm:w-[70%] md:w-[60%] lg:w-[60%] bg-white flex items-center justify-between mt-5 h-12 rounded-md">
                             <input
-                                className='flex-[9_9_0%] h-full border-none px-1 py-3 outline-none text-black/100'
+                                className='flex-[4_4_0%] w-2 h-full border-none px-1 py-3 outline-none text-black/100'
                                 type="text"
                                 placeholder='Username'
                                 ref={usernameRef}
                                 onChange={(e) => setUsername(e.target.value)}
                             />
                             <input
-                                className='flex-[6_6_0%] h-full border-none px-1 py-3 outline-none text-black/100'
+                                className='flex-[4_4_0%] w-2 h-full border-none px-1 py-3 outline-none text-black/100'
                                 type="password"
                                 placeholder="Password"
                                 ref={passwordRef}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-                            <button className="flex-[6_6_0%] h-full bg-red-600 border-none text-white text-sm sm:text-sm cursor-pointer" onClick={handleFinish}>Start Membership</button>
+                            <button className="flex-[4_4_0%] w-2 h-full bg-red-600 border-none text-white text-sm sm:text-md cursor-pointer" onClick={handleFinish}>Start Membership</button>
                         </form>
                     )
                 }

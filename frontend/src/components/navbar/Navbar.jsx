@@ -7,7 +7,7 @@ import { Person, ArrowDownward, Notifications, Search } from '@mui/icons-materia
 import { AuthContext } from '../../authContext/AuthContext';
 import { logout } from '../../authContext/AuthActions';
 
-import NetflixLogo from '../../media/netflix_logo.png';
+import NetflixLogo from '../../media/watchflix.png';
 const Navbar = () => {
 
     const [scrolled, setScrolled] = useState(false);
